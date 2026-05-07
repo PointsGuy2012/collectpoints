@@ -10,15 +10,16 @@
   <p class="pointsCount">0</p>
   <button id="Click for 1 point">Click for +1 Point</button>
   <script>
-    const btn = document.getElementById("Click for 1 point")
-      const pts = document.getElementById("pointsCount")
+    const btn = document.getElementById("Click for 1 point");
+      const pts = document.getElementById("pointsCount");
 
     let pts = 0;
     
-      btn.addEventListener('click')
+      btn.addEventListener('click');
       function(){
-      pointsCount += 1
-        alert("you got a point!")
+      pointsCount += 1;
+        alert("you got a point!");
+        pts.textContent = pts;
       }
   </script>
 </body>
