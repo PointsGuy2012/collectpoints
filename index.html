@@ -7,20 +7,20 @@
 </head>
 <body>
   <h1>Current Points:</h1>
-  <p class="pointsCount">0</p>
+  <p id="pointsCount">0</p>
   <button id="Click for 1 point">Click for +1 Point</button>
   <script>
     const btn = document.getElementById("Click for 1 point");
       const pts = document.getElementById("pointsCount");
 
-    let pts = 0;
+    let score = 0;
     
       btn.addEventListener('click');
       function(){
-      pointsCount += 1;
+      score += 1;
         alert("you got a point!");
-        pts.textContent = pts;
-      }
+        pts.textContent = score;
+      });
   </script>
 </body>
 </html>
