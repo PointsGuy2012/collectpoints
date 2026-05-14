@@ -7,7 +7,7 @@
   </title>
 </head>
 <body>
-  <h1>Hello,</h1><h1 id="username"></h1>
+  <h1>Hello, <span id="username"></span></h1>
   <h1>Current Points:</h1>
   <p id="pointsCount">0</p>
   <button id="Click for 1 point">Click for +1 Point</button>
@@ -19,20 +19,24 @@
     const btn = document.getElementById("Click for 1 point");
     const pts = document.getElementById("pointsCount");
     const btn2 = document.getElementById("Click for 2 point");
-    const name = document.getElementById("username")
-    let name = prompt("What is your name?");
-    alert(`Hello, ${name}`);
+    const userHeading = document.getElementById("username"); // Renamed to avoid error
+    
+    let userNameInput = prompt("What is your name?"); // Renamed to avoid error
+    alert(`Hello, ${userNameInput}`);
+    
+    // This line injects the name straight into your HTML heading
+    userHeading.textContent = userNameInput;
     
     let score = 0;
     
-    // First button listener (separated)
+    // First button listener
     btn.addEventListener('click', function(){
       score += 1;
       alert('You got a point!');
       pts.textContent = score;
-    }); // This closes the first button function properly
+    });
 
-    // Second button listener (separated)
+    // Second button listener
     btn2.addEventListener('click', function(){
       score += 2;
       alert('You got 2 points for thinking outside the box!');
@@ -41,3 +45,4 @@
   </script>
 </body>
 </html>
+Use code with caution.Key Fixes 
