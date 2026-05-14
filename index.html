@@ -7,59 +7,37 @@
   </title>
 </head>
 <body>
-<h1>this is proof the Brendon Leung made this website</h1>
+  <h1>Hello,</h1><h1 id="username"></h1>
   <h1>Current Points:</h1>
   <p id="pointsCount">0</p>
   <button id="Click for 1 point">Click for +1 Point</button>
-<br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <button id="Click for 2 point">Click for +2 Points</button>
-<br>
+  <br>
+
   <script>
     const btn = document.getElementById("Click for 1 point");
-      const pts = document.getElementById("pointsCount");
+    const pts = document.getElementById("pointsCount");
     const btn2 = document.getElementById("Click for 2 point");
-let name = prompt("What is your name?");
-alert(`Hello, ${name}`);
+    const name = document.getElementById("username")
+    let name = prompt("What is your name?");
+    alert(`Hello, ${name}`);
+    
     let score = 0;
     
-      btn.addEventListener('click',
-      function(){
-        score += 1
-        alert('You got a point!')
-        pts.textContent = score;
+    // First button listener (separated)
+    btn.addEventListener('click', function(){
+      score += 1;
+      alert('You got a point!');
+      pts.textContent = score;
+    }); // This closes the first button function properly
 
-      btn2.addEventListener('click',
-      function(){
-        score += 2
-        alert('You got 2 points for thinking outside the box!')
-        pts.textContent = score;
-      });
+    // Second button listener (separated)
+    btn2.addEventListener('click', function(){
+      score += 2;
+      alert('You got 2 points for thinking outside the box!');
+      pts.textContent = score;
+    });
   </script>
-
 </body>
 </html>
