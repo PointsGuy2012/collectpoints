@@ -11,18 +11,55 @@
   <h1>Current Points:</h1>
   <p id="pointsCount">0</p>
   <button id="Click for 1 point">Click for +1 Point</button>
+<br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <button id="Click for 2 point">Click for +2 Points</button>
+<br>
   <script>
     const btn = document.getElementById("Click for 1 point");
       const pts = document.getElementById("pointsCount");
+    const btn2 = document.getElementById("Click for 2 point");
 let name = prompt("What is your name?");
 alert(`Hello, ${name}`);
     let score = 0;
     
       btn.addEventListener('click',
       function(){
+        score += 1
         alert('You got a point!')
+        pts.textContent = score;
+
+      btn2.addEventListener('click',
+      function(){
+        score += 2
+        alert('You got 2 points for thinking outside the box!')
         pts.textContent = score;
       });
   </script>
+
 </body>
 </html>
