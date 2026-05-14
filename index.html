@@ -14,11 +14,13 @@
   <script>
     const btn = document.getElementById("Click for 1 point");
       const pts = document.getElementById("pointsCount");
-
+let name = prompt("What is your name?");
+alert(`Hello, ${name}`);
     let score = 0;
     
       btn.addEventListener('click',
       function(){
+        alert('You got a point!')
         pts.textContent = score;
       });
   </script>
