@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <!--the website is hosted at PointsGuy2012.github.io/collectpoints-->
 <head>
   <title>
     Collect Random Points V1
@@ -11,6 +10,7 @@
   <h1>Current Points:</h1>
   <p id="pointsCount">0</p>
   <button id="Click for 1 point">Click for +1 Point</button>
+  <button id="Click for 3 point" style="display: none;">Click for +3 Points</button>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <button id="Click for 2 point">Click for +2 Points</button>
   <br>
@@ -19,30 +19,50 @@
     const btn = document.getElementById("Click for 1 point");
     const pts = document.getElementById("pointsCount");
     const btn2 = document.getElementById("Click for 2 point");
-    const userHeading = document.getElementById("username"); // Renamed to avoid error
+    const btn3 = document.getElementById("Click for 3 point");
+    const userHeading = document.getElementById("username");
     
-    let userNameInput = prompt("What is your name?"); // Renamed to avoid error
+    let userNameInput = prompt("What is your name?");
     alert(`Hello, ${userNameInput}`);
-    
-    // This line injects the name straight into your HTML heading
     userHeading.textContent = userNameInput;
     
     let score = 0;
+    let boughtButton3 = false;
     
-    // First button listener
     btn.addEventListener('click', function(){
       score += 1;
       alert('You got a point!');
       pts.textContent = score;
+      checkScoreRules();
     });
 
-    // Second button listener
     btn2.addEventListener('click', function(){
       score += 2;
       alert('You got 2 points for thinking outside the box!');
       pts.textContent = score;
+      checkScoreRules();
     });
+
+    btn3.addEventListener('click', function(){
+      score += 3;
+      alert('Wow, massive +3 points boost!');
+      pts.textContent = score;
+    });
+
+    function checkScoreRules() {
+      if (score >= 10 && boughtButton3 === false) {
+        let buyOffer = prompt("Do you want to buy +3 button? Type 'yes' or 'no'");
+        
+        if (buyOffer !== null && buyOffer.toLowerCase() === "yes") {
+          alert("Success! The +3 button is now unlocked next to your +1 button.");
+          btn3.style.display = "inline-block";
+          boughtButton3 = true;
+        } else {
+          alert("Alright, you skipped the offer. Keep grinding!");
+          boughtButton3 = true;
+        }
+      }
+    }
   </script>
 </body>
 </html>
-Use code with caution.Key Fixes 
