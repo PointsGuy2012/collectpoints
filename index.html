@@ -10,6 +10,7 @@
   <h1>Current Points:</h1>
   <p id="pointsCount">0</p>
   <button id="Click for 1 point">Click for +1 Point</button>
+    <button id="Click for 5 point">Click for +5 Point</button>
   <button id="Click for 3 point" style="display: none;">Click for +3 Points</button>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <button id="Click for 2 point">Click for +2 Points</button>
@@ -20,6 +21,7 @@
     const pts = document.getElementById("pointsCount");
     const btn2 = document.getElementById("Click for 2 point");
     const btn3 = document.getElementById("Click for 3 point");
+    const btn4 = document.getElementById("Click for 5 point");
     const userHeading = document.getElementById("username");
     
     let userNameInput = prompt("What is your name?");
@@ -49,6 +51,12 @@
       pts.textContent = score;
     });
 
+     btn3.addEventListener('click', function(){
+      score += 5;
+      alert('Wow, crazy +5 points gain!');
+      pts.textContent = score;
+    });
+
     function checkScoreRules() {
       if (score >= 10 && boughtButton3 === false) {
         let buyOffer = prompt("Do you want to buy +3 button? Type 'yes' or 'no'");
@@ -63,6 +71,17 @@
         }
       }
     }
+
+          if (score >= 20 && boughtButton4 === false) {
+        let buyOffer = prompt("Do you want to buy +5 button? Type 'yes' or 'no'");
+        
+        if (buyOffer !== null && buyOffer.toLowerCase() === "yes") {
+          alert("Success! The +5 button is now unlocked.");
+          btn4.style.display = "inline-block";
+          boughtButton4 = true;
+        } else {
+          alert("Alright, you skipped the offer. Keep grinding!");
+          boughtButton4 = true;
   </script>
 </body>
 </html>
